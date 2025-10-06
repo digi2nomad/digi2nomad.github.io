@@ -4,54 +4,13 @@ const articles = [
         id: 'ai-prompts-thoughts',
         title: 'Hard-Won Truths About AI Prompts Most Tutorials Miss',
         date: '2025-10-2',
-        content: `
-<h2>The Frustration of "Perfect" Prompts That Failing</h2>
-We've all been there. You find a "perfect" AI prompt tutorial online, follow the steps meticulously, and paste the template into the input box, only to receive a completely irrelevant or low-quality result. It's a common and frustrating experience that leads many to believe they just aren't "good" at prompting.
-After extensive struggle with this exact problem, I discovered the real issue isn't about finding the perfect template or a magic phrase. The problem is a fundamental flaw in how we think about our requests before we even start writing. This article shares the most impactful, counter-intuitive takeaways that will shift your focus from collecting "prompt templates" to developing "structured thinking"—the truly valuable and reusable skill in the age of AI.
-<h2>Takeaway 1: You're Falling into the "Copycat Trap" Because You Don't Know What You Want</h2>
-The "Copycat Trap" is a familiar cycle: you try to replicate a successful example from a tutorial, but your own attempt fails miserably. The root cause of this failure isn't a poor prompting technique; it's that you don't have a clear, detailed understanding of the output you actually desire.
-It's like asking a chef to cook a "delicious dish" without specifying any taste preferences, ingredients, or portion sizes. The source material highlights a great example: asking an AI to generate a "second-hand item trading applet." This request seems clear, but it's full of unstated assumptions and holes:
-<ul>
-<li>What does "can be run directly" mean? Front-end code only? Or does it need back-end APIs and a database?</li>
-<li>What core modules must be included (e.g., product publishing, payment, rating system)?</li>
-<li>What potential details might the AI overlook (e.g., user verification, filtering illegal items)?</li>
-</ul>
-The "hidden information" behind every successful prompt example isn't a secret technique; it's a deep understanding of the problem domain. To escape this trap, you must first do the hard work of thinking before you prompt. The antidote is a three-step preparatory process:
-<ol>
-<li>Clarify "What the Result Looks Like." Before writing the prompt, research what a successful outcome entails. For the applet, this means analyzing similar products to understand its core pages (homepage, details page, etc.), interaction logic, and technical requirements.
-<li>Break Down the "Manual Implementation Path." Ask yourself: if there were no AI, how would a human create this from scratch? For the applet, this would involve drawing a prototype, defining the data structure, developing the front-end, and connecting the back-end. This path becomes the logical sequence for your prompt.
-<li>Set "Acceptance Criteria." Define in advance what conditions the AI's output must meet to be considered qualified. For code, this could be: "Must include comments, be compatible with iOS and Android systems, and have no obvious syntax errors."
-</ol>
-Only after completing this mental preparation can you begin to craft a truly effective prompt.
-<h2>Takeaway 2: A Prompt Is a "Translation," Not a "Wish"</h2>
-The core mindset shift required for effective AI interaction is to view prompts not as magic spells but as a process of "translation." Your primary job is to translate your detailed human needs—clarified through the three steps above—into a language the machine can understand and execute.
-To be a good translator, you must first become a "demand expert." You have to fully grasp the problem and the desired outcome before you can communicate it effectively.
-Just as a doctor must diagnose a condition before prescribing medication, before writing a prompt, you must have a thorough understanding of "what you want, how to do it, and what makes it good."
-This thinking can be formalized into a practical formula that operationalizes the translation process, turning a vague idea into a precise instruction: Original Demand → Result Definition + Step Breakdown + Acceptance Criteria. This framework is the tangible method for moving from wishing for a result to translating a clear specification.
-<h2>Takeaway 3: A Truly Good Prompt Has Three Levels (And Most of Us Stop at Level One)</h2>
-To improve your prompts beyond simple success or failure, you can use a three-level framework to evaluate their quality and effectiveness. This model provides a clear path from a basic working prompt to a professional, scalable tool.
-The three levels are:
-<ol>
-<li>First Level: The prompt makes the AI produce an answer that meets your expectations. This is the most basic requirement—getting a result that is in the right direction.
-<li>Second Level: The prompt makes the AI consistently produce answers that meet expectations. Achieving the standard once is nothing; the goal is to maintain stable performance and avoid "hit or miss" situations.
-<li>Third Level: The prompt can be reused, structured, and made lightweight. An excellent prompt shouldn't be a one-time "consumable." It has a degree of universality that allows for quick adjustments for similar scenarios.
-This framework is invaluable because it encourages a strategic approach. For enterprise applications, moving from "occasional compliance" to "continuous reliability" through batch testing is critical. Structuring prompts to be reusable (Level 3) significantly reduces repetitive development costs and is essential for scaling AI solutions across a business.
-</ol>
-<h2>Takeaway 4: Sometimes, It's Not You—It's the Model</h2>
-Here's a liberating idea: no matter how perfectly you structure your prompt, the AI model itself might be the bottleneck. When you've clarified your goal, broken down the steps, and set clear criteria but still get poor results, the problem may be a fundamental limitation in the model's capabilities.
-Here are the most common signs that it's time to stop tweaking your prompt and start trying a different model:
-<ul>
-<li>Instructions go "in one ear and out the other": The model is "disobedient," consistently ignoring specific instructions like output format ("give me a bulleted response") or language constraints ("output only in Chinese").
-<li>Communication is like "talking to a wall": It understands simple prompts but gets stuck on complex or abstract instructions, ignoring key requirements like "analyze and categorize" and only performing the first part.
-<li>The quality is poor despite the right format: The output follows all your structural rules, but the content itself is full of factual errors, logical contradictions, or empty, generic points.
-<li>It "slacks off" on complex tasks: It handles the first few steps of a multi-step request well but gets "abandoned halfway" through, providing perfunctory or random results for later steps due to a lack of "attention span."
-<li>It ignores key details: It selectively overlooks critical information you provided, such as "must include 3 core functions" or "refer to the attached data," and fabricates information instead.
-</ul>
-AI models have objective differences in their capabilities, just like with search engines—some can find precise answers, while others just give a pile of irrelevant links. A good prompt needs to be matched with a good "executor" to achieve its maximum value.
-<h2>Conclusion: Stop Hunting for Templates, Start Building Your Thinking</h2>
-The secret to consistently getting high-quality results from AI doesn't lie in a hidden folder of magic prompt templates. It hinges on developing structured, clear thinking about your goals before you write a single word. This process of defining your result, breaking down the steps, and setting acceptance criteria is the true "reusable" skill in the age of AI.
-Now that you know the secret is in the thinking, not the template, what is the first complex problem you'll try to "translate" for an AI?
-        `
+        content: `article/article-001.html`
+    },
+    {
+        id: 'python-image-library',
+        title: 'Python\'s Go-To Image Library',
+        date: '2025-10-5',
+        content: `article/article-002.html`
     }
 ];
 
@@ -91,13 +50,25 @@ function loadArticleList() {
     });
 }
 
+function removeLastElementOfPathname(pathname) {
+    const parts = pathname.split('/');
+    parts.pop();
+    return parts.join('/');
+}
+
 // Function to load and display an article
-function loadArticle(articleId) {
+async function loadArticle(articleId) {
     const article = articles.find(a => a.id === articleId);
     const articleContent = document.getElementById('article-content');
-
+    const href = removeLastElementOfPathname(window.location.href);
+    const url = href + '/articles/' + articleId + '.html';
+    const response = await fetch(url);
+    if (!response.ok) {
+        alert('Failed to load article: ' + url);
+        throw new Error('HTTP response was not ok');
+    }
     if (article) {
-        articleContent.innerHTML = article.content;
+        articleContent.innerHTML = await response.text();
         // Scroll to top of article
         articleContent.scrollTop = 0;
     } else {

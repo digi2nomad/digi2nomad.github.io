@@ -1,0 +1,72 @@
+<h1>Python's Go-To Image Library</h1>
+While working on the LingBloc project, some random notes on Pillow...When facing a folder packed with images needing
+the same tedious edit,  resizing, adding texts and watermarking, etc. It is a pain of repetitive manual work. This is
+the kind of task that screams for a script, and for Python developers, comes the Pillow library. Following are some
+notes of how to approach image automation.
+
+<h2>1. Four simple steps</h2>
+
+The fundamental workflow for nearly every task in Pillow can be distilled into a clear, logical four-step process.
+<ol>
+<li> Open: Load an image from a file.
+<li> Inspect: Check its properties to see what you're working with.
+<li> Manipulate: Apply changes, filters, or edits.
+<li> Save: Write the result back to a new file.
+</ol>
+This consistent structure means that once you master one task, you have the foundational knowledge to tackle almost any other image manipulation challenge, from a single edit to batch-processing thousands of files.
+
+<h2>2. Everything Revolves Around The Image Class</h2>
+
+The entire library is built around one concept: the Image class. You will almost always start by creating an Image object
+in one of two ways:
+<ul>
+<li>Image.open(): Used to load an existing image from a file path.
+<li>Image.new(): Used to create a new, blank image from scratch by specifying its mode, size, and color.
+</ul>
+
+Once you have an Image object, you can inspect its properties. Key attributes include .size (which returns a tuple
+like (474, 325)), .format, .mode, and .info, a dictionary containing a wealth of metadata, from DPI settings to raw
+EXIF data like b'Exif\x00\x00MM...' that might hold camera settings. This way can inspect an image, its pixels,
+format, and metadata, into a single, predictable variable. Every operation, from a simple resize to a complex filter,
+becomes a method call on this object, fashion an intuitive API that minimizes cognitive load for the developer.
+
+<h2>3. Applying Complex Filters Feels Like Using Your Phone</h2>
+
+Pillow makes applying artistic effects like blurs, sharpening, or edge detection feel instantly familiar. Using Pillow's
+image filter class is, well, it's just like slapping a filter on a photo on your phone. It's a really simple way to get
+some powerful effects...
+<ul>
+    <li>First, import the ImageFilter class.
+    <li>Second, call the .filter() method on your image object.
+    <li>Third, Pillow gives you back a brand new Image object with the filter applied.
+</ul>
+The original image is left untouched, a safe approach that prevents accidental data loss during complex chains of operations.
+
+<h2>4. It's a Creative Canvas, Not Just an Editing Tool</h2>
+
+While Pillow can be used a tool for editing existing images, its capabilities extend far beyond that. The library is
+also a powerful tool for programmatic creation. Using the Image.new() method as a starting point, you can generate entirely
+new graphics from a blank canvas. This opens up a world of possibilities for dynamic image generation. For example,
+you can create custom graphics.
+
+<ol>
+<li>Load a base template image using Image.open().
+<li>Create a new, transparent RGBA layer of the same size with Image.new().
+<li>Draw custom text onto this new layer using ImageDraw and ImageFont.
+<li>Composite the text layer on top of the base template using Image.alpha_composite.
+</ol>
+This transforms Pillow from a mere batch-processing script into a lightweight programmatic design engine. In an era of
+automated content generation, this means you can build systems that create social media cards, generate dynamic report
+visuals, create youtube thumbnail, or produce customized user avatars on the fly, without ever leaving the Python backend.
+
+<h2>5. Pillow Has a Community</h2>
+
+The original PIL project stopped receiving updates years ago, it risked becoming obsolete. The open-source community
+stepped in and created Pillow to keep the project alive, adding support for modern Python versions and a host of new
+features. This community-driven effort is why Pillow is now the de facto standard for image processing in Python.
+
+<br>
+<br>
+
+Pillow  offers an accessible on-ramp with its simple four-step workflow, yet it scales to become a full-fledged creative
+canvas for programmatic design, from a simple utility to a powerful design engine.
