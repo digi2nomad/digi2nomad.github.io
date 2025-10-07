@@ -23,27 +23,27 @@ body {
 /* Sidebar Styles */
 .sidebar {
     width: 300px;
-    background-color: #2c3e50;
+    background-color: grey;
     color: white;
     padding: 2rem;
     overflow-y: auto;
 }
 
 .sidebar-header h1 {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #ecf0f1;
+    color: white;
 }
 
 .tagline {
-    font-size: 0.8rem;
-    color: #bdc3c7;
+    font-size: 1.0rem;
+    color: white;
     margin-bottom: 2rem;
-    font-style: italic;
+    font-weight: bold;
 }
 
 .article-index h2 {
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     margin-bottom: 1rem;
     color: #ecf0f1;
     border-bottom: 2px solid #34495e;
@@ -59,7 +59,7 @@ body {
 }
 
 .article-index a {
-    color: #3498dc;
+    color: black;
     text-decoration: none;
     transition: color 0.3s;
     display: block;
@@ -67,12 +67,12 @@ body {
 }
 
 .article-index a:hover {
-    color: #5dade2;
+    color: darkblue;
 }
 
 .article-index a.active {
-    color: #1abc90;
-    font-weight: bold;
+    color: black;
+    font-weight: bolder;
 }
 
 /* Main Content Styles */

@@ -2,15 +2,13 @@
 const articles = [
     {
         id: 'ai-prompts-thoughts',
-        title: 'Hard-Won Truths About AI Prompts Most Tutorials Miss',
+        title: '"Perfect" Prompts That Fail',
         date: '2025-10-2',
-        content: `article/article-001.html`
     },
     {
         id: 'python-image-library',
         title: 'Python\'s Go-To Image Library',
         date: '2025-10-5',
-        content: `article/article-002.html`
     }
 ];
 
@@ -64,7 +62,7 @@ async function loadArticle(articleId) {
     const url = href + '/articles/' + articleId + '.html';
     const response = await fetch(url);
     if (!response.ok) {
-        alert('Failed to load article: ' + url);
+        //alert ('Failed to load article :' + url);
         throw new Error('HTTP response was not ok');
     }
     if (article) {
